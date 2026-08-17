@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import {
   Wifi,
   ShowerHead,
@@ -67,13 +68,17 @@ export default function RoomDetails() {
 
             {/* Visual Gallery Grid */}
             <div className="grid grid-cols-2 gap-4 h-[300px] md:h-fit">
-              <img
+              <Image
                 src="/hotel/DSC_0246.JPG"
+                width={800}
+                height={600}
                 className="w-full h-full object-cover rounded-2xl shadow-sm"
                 alt="Room View 1"
               />
-              <img
+              <Image
                 src="/hotel/DSC_0248.JPG"
+                width={800}
+                height={600}
                 className="w-full h-full object-cover rounded-2xl shadow-sm"
                 alt="Room View 2"
               />
@@ -98,9 +103,10 @@ export default function RoomDetails() {
             <div>
               <h1 className="text-2xl font-serif mb-8 border-b border-gray-100 pb-4">Room Features</h1>
               <div className="relative w-full h-64 md:h-96 mb-8 rounded-2xl overflow-hidden">
-                <img
+                <Image
                   src="/hotel/DSC_0221.JPG"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                   alt="Main Feature View"
                 />
               </div>

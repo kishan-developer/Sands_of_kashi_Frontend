@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { poppins, montserrat, playfair, raleway } from "./fonts";
 import "./globals.css";
 
+export const metadata: Metadata = {
+  title: "Sands of Kashi - Luxury Hotel",
+  description: "Experience true comfort and luxury at Sands of Kashi.",
+};
+
 
 export default function RootLayout({
   children,

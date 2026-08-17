@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Gift, Ticket, User, LogIn, UserPlus, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { Gift, Ticket, LogIn, UserPlus, ArrowRight } from 'lucide-react';
 
 export default function UserDashboardPage() {
   return (
@@ -22,9 +23,11 @@ export default function UserDashboardPage() {
 
       <div className="max-w-4xl mx-auto p-4 md:p-6 mt-10 space-y-8">
         <div className="bg-gradient-to-br from-[#161616] to-black border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl shadow-black/50 text-center">
-          <img
+          <Image
             src="/logo.png"
             alt="Sands of Kashi"
+            width={96}
+            height={96}
             className="w-20 h-20 md:w-24 md:h-24 rounded-full mx-auto mb-4 border-2 border-[#c5a059] p-1 bg-black"
           />
           <h2 className="text-2xl md:text-3xl font-serif text-[#c5a059] mb-2">Welcome to Your Dashboard</h2>

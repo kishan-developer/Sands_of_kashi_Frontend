@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { QRCodeSVG } from 'qrcode.react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -196,9 +197,11 @@ export default function UserRewardsPage() {
                     className="relative overflow-hidden bg-gradient-to-br from-[#161616] to-black border border-white/10 rounded-2xl p-6 shadow-lg hover:border-[#c5a059]/60 transition-all"
                   >
                     <div className="text-center mb-6">
-                      <img
+                      <Image
                         src="/logo.png"
                         alt="Sands of Kashi"
+                        width={80}
+                        height={80}
                         className="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-[#c5a059] p-1 bg-black"
                       />
                       <h3 className="text-3xl md:text-4xl font-serif text-[#c5a059]">{coupon.title}</h3>

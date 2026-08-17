@@ -9,6 +9,9 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+
+  
+
   return (
     <footer className="bg-[#f8f7f5] pt-20 pb-10 relative overflow-hidden">
       {/* Decorative Background Elements */}
@@ -19,6 +22,9 @@ export default function Footer() {
           <circle cx="10" cy="10" r="60" fill="none" stroke="currentColor" strokeWidth="1" />
         </svg>
       </div>
+
+
+
 
       <div className="max-w-7xl mx-auto px-2 md:px-6">
         {/* Newsletter Section */}

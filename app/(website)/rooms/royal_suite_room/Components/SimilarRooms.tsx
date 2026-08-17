@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Users, Ruler, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -83,10 +84,11 @@ export default function SimilarRooms() {
               
               {/* Image Container */}
               <div className="relative h-72 overflow-hidden">
-                <img
+                <Image
                   src={room.image}
                   alt={room.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full text-sm font-semibold text-[#1a1a1a]">
                   {room.price} <span className="text-gray-400 font-normal">/ Night</span>
