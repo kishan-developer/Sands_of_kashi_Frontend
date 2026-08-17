@@ -83,7 +83,7 @@ const AboutSection = () => {
         </div>
       </div>
 
-      <BookingBar />
+      {/* <BookingBar /> */}
     </section>
   );
 };

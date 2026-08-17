@@ -38,7 +38,8 @@ export default function DiningExperience() {
             </div>
 
             <Link
-              href="/restaurant"
+              href="https://masalamist.in"
+              target="_blank"
               className="inline-block bg-[#c5a37f] text-white py-4 px-8 rounded-lg font-semibold text-sm uppercase tracking-widest hover:bg-[#1a1a1a] transition-colors"
             >
               Explore Dining
