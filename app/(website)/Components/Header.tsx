@@ -31,8 +31,9 @@ export default function Header() {
         {/* DESKTOP NAV - Hidden on mobile and tablet, visible on laptop/desktop */}
         <div className="hidden lg:flex items-center  gap-5">
           <nav className="flex text-base lg:text-lg items-center capitalize space-x-4 lg:space-x-6 text-white font-medium">
+            <Link href="/" className="hover:text-[#b5946a] transition-colors font-serif uppercase hover:border-b-2 hover:border-[#b5946a]">Home</Link>
             <Link href="/booking" className="hover:text-[#b5946a] transition-colors font-serif uppercase hover:border-b-2 hover:border-[#b5946a]">Our Rooms</Link>
-            <Link href="/resturant" className="hover:text-[#b5946a] transition-colors font-serif uppercase hover:border-b-2 hover:border-[#b5946a]">Restaurant</Link>
+            <Link href="https://masalamist.in" target="_blank" className="hover:text-[#b5946a] transition-colors font-serif uppercase hover:border-b-2 hover:border-[#b5946a]">Restaurant</Link>
             <Link href="/about" className="hover:text-[#b5946a] transition-colors font-serif uppercase hover:border-b-2 hover:border-[#b5946a]">About</Link>
             <Link href="/blogs" className="hover:text-[#b5946a] transition-colors font-serif uppercase hover:border-b-2 hover:border-[#b5946a]">Blogs</Link>
             <Link href="/contact" className="hover:text-[#b5946a] transition-colors font-serif uppercase hover:border-b-2 hover:border-[#b5946a]">Contact</Link>
@@ -42,7 +43,7 @@ export default function Header() {
             href="/booking"
             className="px-4 lg:px-6 py-2 font-serif uppercase bg-[#b5946a] text-white text-sm lg:text-base rounded-md hover:bg-[#705c49] transition shadow-md hover:shadow-lg active:scale-95"
           >
-            Book Now
+            Book Your Stay
           </Link>
         </div>
 
@@ -61,7 +62,7 @@ export default function Header() {
           <nav className="flex flex-col space-y-3 text-white mt-4 border-t border-white/20 opacity-0 animate-fadeIn">
             <Link href="/" onClick={() => setOpen(false)} className="py-2 hover:text-[#b5946a] transition-colors font-serif uppercase">Home</Link>
             <Link href="/rooms" onClick={() => setOpen(false)} className="py-2 hover:text-[#b5946a] transition-colors font-serif uppercase">Our Rooms</Link>
-            <Link href="/resturant" onClick={() => setOpen(false)} className="py-2 hover:text-[#b5946a] transition-colors font-serif uppercase">Restaurant</Link>
+             <Link href="https://masalamist.in" target="_blank" className="hover:text-[#b5946a] transition-colors font-serif uppercase hover:border-b-2 hover:border-[#b5946a]">Restaurant</Link>
             <Link href="/about" onClick={() => setOpen(false)} className="py-2 hover:text-[#b5946a] transition-colors font-serif uppercase">About</Link>
             <Link href="/blogs" onClick={() => setOpen(false)} className="py-2 hover:text-[#b5946a] transition-colors font-serif uppercase">Blogs</Link>
             <Link href="/contact" onClick={() => setOpen(false)} className="py-2 hover:text-[#b5946a] transition-colors font-serif uppercase">Contact</Link>
@@ -72,7 +73,7 @@ export default function Header() {
             onClick={() => setOpen(false)}
             className="w-full mt-4 px-6 py-3 bg-[#b5946a] font-serif uppercase text-white text-sm rounded-md hover:bg-[#705c49] transition shadow-md hover:shadow-lg active:scale-95 opacity-0 animate-fadeIn"
           >
-            Book Now
+           Book Your Stay
           </Link>
         </div>
       )}

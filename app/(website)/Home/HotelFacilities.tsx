@@ -1,9 +1,12 @@
 "use client";
 
-import { Car, Wind, Coffee, Wifi, CreditCard, X, Ban, User, Languages, Utensils, Clock, Luggage, HeadphonesIcon, Shirt, ArrowUp, Dumbbell, Flower2, Dog, Bed } from "lucide-react";
+import { Wifi, Wind, Coffee, Utensils, Clock, Shirt, Luggage, Check, Car, Snowflake, MapPin, HeadphonesIcon, Shield, ArrowUp, ChefHat, Bell } from "lucide-react";
+import { useState } from 'react';
+import BookingModal from '../Components/BookingModal';
 
 interface AmenityItem {
   name: string;
+  icon: React.ReactNode;
   free?: boolean;
 }
 
@@ -16,95 +19,52 @@ interface FacilityCategory {
 const facilities: FacilityCategory[] = [
   {
     title: "Popular amenities",
-    icon: <Wifi className="w-6 h-6 text-[#AB8A63]" />,
+    icon: <Wifi className="w-8 h-8" />,
     items: [
-      { name: "Parking", free: true },
-      { name: "Air conditioning" },
-      { name: "Breakfast", free: true },
-      { name: "Wi-Fi", free: true },
-      { name: "Internet (Wi-Fi)", free: true },
-    ],
-  },
-  {
-    title: "Policies & payments",
-    icon: <CreditCard className="w-6 h-6 text-[#AB8A63]" />,
-    items: [
-      { name: "Smoke-free property" },
-      { name: "Credit cards accepted" },
-      { name: "Debit cards accepted" },
-      { name: "Cash accepted" },
-    ],
-  },
-   {
-    title: "Services",
-    icon: <Clock className="w-6 h-6 text-[#AB8A63]" />,
-    items: [
-      { name: "Front desk (24-hour)" },
-      { name: "Baggage storage" },
-      { name: "Concierge" },
-      { name: "Full-service laundry" },
-      { name: "Lift" },
-    ],
-  },
- 
-  // {
-  //   title: "Pools",
-  //   icon: <X className="w-6 h-6 text-[#AB8A63]" />,
-  //   items: [
-  //     { name: "No pools" },
-  //     { name: "No hot tub" },
-  //   ],
-  // },
-  {
-    title: "Parking & transport",
-    icon: <Car className="w-6 h-6 text-[#AB8A63]" />,
-    items: [
-      { name: "Parking", free: true },
-    ],
-  },
-  {
-    title: "Accessibility",
-    icon: <User className="w-6 h-6 text-[#AB8A63]" />,
-    items: [
-      { name: "Not accessible" },
-    ],
-  },
-  {
-    title: "Languages spoken",
-    icon: <Languages className="w-6 h-6 text-[#AB8A63]" />,
-    items: [
-      { name: "English" },
-      { name: "Hindi" },
+      { name: "Parking", icon: <Car className="w-4 h-4" />, free: true },
+      { name: "Air conditioning", icon: <Wind className="w-4 h-4" /> },
+      { name: "Breakfast", icon: <Coffee className="w-4 h-4" />, free: true },
+      { name: "Wi-Fi", icon: <Wifi className="w-4 h-4" />, free: true },
     ],
   },
   {
     title: "Food and drink",
-    icon: <Utensils className="w-6 h-6 text-[#AB8A63]" />,
+    icon: <Utensils className="w-8 h-8" />,
     items: [
-      { name: "Restaurant" },
-      { name: "Table service" },
-      { name: "Room service" },
-      { name: "Breakfast", free: true },
+      { name: "Restaurant", icon: <Utensils className="w-4 h-4" /> },
+      { name: "Table service", icon: <ChefHat className="w-4 h-4" /> },
+      { name: "Room service", icon: <Bell className="w-4 h-4" /> },
     ],
   },
- 
   {
-    title: "Pets",
-    icon: <Dog className="w-6 h-6 text-[#AB8A63]" />,
+    title: "Services",
+    icon: <Clock className="w-8 h-8" />,
     items: [
-      { name: "No pets allowed" },
+      { name: "Front desk (24-hour)", icon: <Clock className="w-4 h-4" /> },
+      { name: "Baggage storage", icon: <Luggage className="w-4 h-4" /> },
     ],
   },
- 
+  {
+    title: "Additional services",
+    icon: <Shirt className="w-8 h-8" />,
+    items: [
+      { name: "Full-service laundry", icon: <Shirt className="w-4 h-4" /> },
+      { name: "Lift", icon: <ArrowUp className="w-4 h-4" /> },
+    ],
+  },
 ];
 
 export default function HotelFacilities() {
-  return (
-    <section className="bg-[#000000]/60 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{ backgroundImage: "url('https://res.cloudinary.com/drmpv5vne/image/upload/v1783764970/DSC_0252_cirqen.jpg')" }}>
-      {/* <div className="absolute inset-0 bg-[#000000]/60 z-10"></div> */}
-      <div className="flex p-20 md:p-40 w-full items-center justify-center bg-[#000000]/60">
-        <div className="max-w-7xl mx-auto text-center z-20 ">
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleBookNow = () => {
+    setIsModalOpen(true);
+  };
+
+  return (
+    <section className="bg-[#000000]/60 relative bg-cover bg-center bg-no-repeat bg-fixed" style={{ backgroundImage: "url('https://res.cloudinary.com/drmpv5vne/image/upload/v1786880532/jpeg-optimizer_ARY04270_h0fko2.jpg')" }}>
+      <div className="flex p-20 md:p-40 w-full items-center justify-center bg-[#000000]/60">
+        <div className="max-w-7xl mx-auto text-center z-20">
 
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-4">
@@ -117,40 +77,59 @@ export default function HotelFacilities() {
             <h1 className="text-5xl md:text-6xl font-serif text-[#ffffff]">
               Hotel Facilities
             </h1>
-            {/* <p className="text-gray-600 max-w-2xl mx-auto mt-4">
-            Take a visual tour through our stunning property and facilities
-          </p> */}
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {facilities.map((category, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl shadow-sm p-8 border border-gray-200"
+                className="bg-gradient-to-br from-white to-gray-50 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-2xl transition-all duration-300 hover:border-[#AB8A63]/30 group"
               >
-                <div className="mb-6 flex items-center gap-3">
-                  {category.icon}
-                  <h3 className="text-xl text-[#AB8A63] font-semibold">{category.title}</h3>
+                <div className="mb-5 text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#AB8A63] to-[#8B7355] rounded-2xl shadow-lg mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-8 h-8 text-white">
+                      {category.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-lg text-[#1a1a1a] font-semibold">{category.title}</h3>
                 </div>
-                <ul className="space-y-3">
+                <div className="space-y-2">
                   {category.items.map((amenity, amenityIdx) => (
-                    <li key={amenityIdx} className="flex items-center justify-between text-gray-700 text-sm">
-                      <span>{amenity.name}</span>
+                    <div key={amenityIdx} className="flex items-center justify-between text-gray-600 text-sm py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">
+                      <div className="flex items-center gap-2">
+                        <div className="text-[#AB8A63]">
+                          {amenity.icon}
+                        </div>
+                        <span>{amenity.name}</span>
+                      </div>
                       {amenity.free && (
-                        <span className="text-green-600 font-medium text-xs bg-green-50 px-2 py-1 rounded-full">FREE</span>
+                        <span className="text-green-600 font-bold text-xs bg-green-100 px-2 py-1 rounded-md">FREE</span>
                       )}
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
             ))}
           </div>
 
-          <h1 className=" mt-10 text-center text-[#ffffff] font-bold text-1xl md:text-1xl">Note : Extra Person @ ₹1200.00/- *Rates are subject to change</h1>
+          <button
+            onClick={handleBookNow}
+            className="mt-8 bg-[#c5a37f] text-white py-3 px-8 rounded-lg font-semibold hover:bg-[#1a1a1a] transition-colors"
+          >
+            Book Your Stay
+          </button>
+
+          <h1 className="mt-10 text-center text-[#ffffff] font-bold text-xl md:text-xl">Note : Extra Person @ ₹1200.00/- *Rates are subject to change</h1>
 
         </div>
       </div>
+      
+      {/* Booking Modal */}
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   );
 }

@@ -9,9 +9,9 @@ export function generateStaticParams() {
 export default async function BlogPostPage({
   params,
 }: {
-  params: Promise<{ id: string }> | { id: string };
+  params: Promise<{ id: string }>;
 }) {
-  const { id } = await Promise.resolve(params);
+  const { id } = await params;
   const post = posts.find((p) => p.id === parseInt(id, 10));
 
   if (!post) {

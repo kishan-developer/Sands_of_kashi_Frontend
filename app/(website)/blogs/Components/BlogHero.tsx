@@ -4,12 +4,12 @@ import React from "react";
 
 export default function BlogHero() {
   return (
-    <section className="relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-[60vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('https://res.cloudinary.com/drmpv5vne/image/upload/v1783764963/DSC_0221_ocnztf.jpg')`, // Replace with your actual image path
+          backgroundImage: `url('https://res.cloudinary.com/drmpv5vne/image/upload/v1783764978/DSC_0360_gdf7ab.jpg')`, // Replace with your actual image path
         }}
       >
         {/* The Dark Overlay - Essential for text readability */}
@@ -19,7 +19,7 @@ export default function BlogHero() {
       {/* Content Container */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* Title with Serif Font */}
-        <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-serif mb-6 tracking-tight">
+        <h1 className="text-white text-2xl md:text-4xl lg:text-5xl font-serif mb-6 tracking-tight">
           Our Blog
         </h1>
 

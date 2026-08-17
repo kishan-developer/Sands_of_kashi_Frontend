@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
+import { useState } from 'react';
+import BookingModal from '../Components/BookingModal';
 
 // 1. Define the Interface for an Offer
 interface Offer {
@@ -18,8 +20,6 @@ const offers: Offer[] = [
     image: "https://res.cloudinary.com/drmpv5vne/image/upload/v1783765570/DSC_0222_kzr40q.jpg",
     price: "₹5500.00",
     features: [
-      "A two-night stay in a room",
-
       "Healthy breakfast and lunch",
       "Access to all Service",
     ],
@@ -42,8 +42,6 @@ const offers: Offer[] = [
     image: "https://res.cloudinary.com/drmpv5vne/image/upload/v1783765559/DSC_0282_tde5ty.jpg",
     price: "₹4500.00",
     features: [
-      "A two-night stay in a room",
-
       "Healthy breakfast and lunch",
       "Access to all Service",
     ],
@@ -53,6 +51,14 @@ const offers: Offer[] = [
 ];
 
 export default function SpecialOffers() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedRoom, setSelectedRoom] = useState('');
+
+  const handleBookNow = (roomTitle: string) => {
+    setSelectedRoom(roomTitle);
+    setIsModalOpen(true);
+  };
+
   const largeOffer = offers.find((o) => o.isLarge);
   const smallOffers = offers.filter((o) => !o.isLarge);
 
@@ -100,7 +106,13 @@ export default function SpecialOffers() {
                     </div>
                   ))}
                 </div>
-                <p className="text-3xl  text-[#c5a37f]">{largeOffer.price}</p>
+                <p className="text-3xl  text-[#c5a37f] mb-6">{largeOffer.price}</p>
+                <button
+                  onClick={() => handleBookNow(largeOffer.title)}
+                  className="bg-[#c5a37f] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#1a1a1a] transition-colors"
+                >
+                  Book Your Stay
+                </button>
               </div>
             </div>
           )}
@@ -131,7 +143,13 @@ export default function SpecialOffers() {
                       </div>
                     ))}
                   </div>
-                  <p className="text-2xl  text-[#c5a37f]">{item.price}</p>
+                  <p className="text-2xl  text-[#c5a37f] mb-4">{item.price}</p>
+                  <button
+                    onClick={() => handleBookNow(item.title)}
+                    className="bg-[#c5a37f] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#1a1a1a] transition-colors"
+                  >
+                    Book Your Stay
+                  </button>
                 </div>
               </div>
             ))}
@@ -139,6 +157,13 @@ export default function SpecialOffers() {
         </div>
 
       </div>
+      
+      {/* Booking Modal */}
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        placeName={selectedRoom}
+      />
     </section>
   );
 }

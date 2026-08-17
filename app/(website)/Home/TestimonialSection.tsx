@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     role: "Local Explorer",
     image: "/reviews/mahak.png",
     stars: 5,
-    quote: "Tasty food and a calm, pleasant environment. The staff is very welcoming. Mr. Pankaj Kumar Pal attended to us beautifully—such a kind and professional person. Highly recommend for anyone visiting Sigra!"
+    quote: "Excellent food, peaceful atmosphere, and very courteous staff. Everything was well maintained, and the overall experience was comfortable and enjoyable. Highly recommended when visiting Sigra."
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const testimonials: Testimonial[] = [
     role: "Official Visit",
     image: "/reviews/neeti.png",
     stars: 5,
-    quote: "Visited Masala Mist Restaurant during my official visit to Varanasi. I was pleasantly surprised by the delicious food and excellent service. Special thanks to Mr. Pankaj Pal, who was extremely helpful and made our dinner memorable."
+    quote: "Had a wonderful experience here. The food was delicious, the ambience was calm and pleasant, and the service was warm and professional. Definitely a great place to stay and dine."
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const testimonials: Testimonial[] = [
     role: "Business Man",
     image: "/reviews/abul.png",
     stars: 5,
-    quote: "If you are in Varanasi and looking for a perfect blend of taste, ambience, and hospitality – Masala Mist Restaurant is the place to be! The signature dishes are a must-try. Truly a 5-star experience in the heart of Kashi."
+    quote: "Really enjoyed the hospitality and overall ambience. The rooms were comfortable, the food was tasty, and the staff was attentive and helpful throughout our visit. Would happily recommend this place."
   },
   {
     id: 4,
@@ -44,16 +44,9 @@ const testimonials: Testimonial[] = [
     role: "Business Man",
     image: "/reviews/kshitij.png",
     stars: 5,
-    quote: "From the moment we walked in, we were greeted with genuine warmth. The staff didn’t just do their job, they actually cared about making sure we were comfortable. The ambience had that perfect balance—elegant but not intimidating."
-  },
-  {
-    id: 5,
-    name: "Prabhat Ojha",
-    role: "Food Blogger",
-    image: "/reviews/prabal.png",
-    stars: 5,
-    quote: "From the moment I walked into MASALA MIST, I knew I was in for something special. The atmosphere strikes the perfect balance between cozy and elegant, with warm lighting, tasteful décor, and an inviting aroma from the kitchen."
+    quote: "Wonderful experience with delicious food, a relaxing ambience, and excellent hospitality. The staff was friendly, attentive, and professional. A comfortable and enjoyable place to stay—highly recommended."
   }
+ 
 ];
 
 export default function TestimonialSection() {
@@ -121,7 +114,7 @@ export default function TestimonialSection() {
                 <div className="relative w-full h-full rounded-full overflow-hidden border-[12px] border-white shadow-2xl">
                   <img
                     src={current.image}
-                    alt={current.name}
+                    alt="Guest"
                     className="object-cover w-full h-full transition-transform duration-700 hover:scale-110"
                   />
                 </div>
@@ -146,8 +139,7 @@ export default function TestimonialSection() {
                 </blockquote>
 
                 <div className="mt-auto">
-                  <h4 className="text-2xl font-serif text-[#c5a37f]">{current.name}</h4>
-                  <p className="text-gray-500 uppercase tracking-widest text-xs font-bold mt-2">{current.role}</p>
+                  <p className="text-gray-500 uppercase tracking-widest text-xs font-bold">Verified Guest</p>
                 </div>
               </div>
             </motion.div>

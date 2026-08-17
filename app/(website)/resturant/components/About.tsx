@@ -21,17 +21,21 @@ const About = () => {
                     <span className="text-[#c5a059] text-sm uppercase tracking-[0.3em] font-bold block mb-4">Our Heritage</span>
                     <h2 className="text-4xl md:text-5xl font-serif text-white mb-5">Bringing Real Taste Back to Your Plate</h2>
                     <p className="text-gray-400 leading-relaxed">
-                        At Masala Mist, we believe great food starts with honest ingredients and unforgettable flavours.
-                        Our journey began with a simple idea: bring real, authentic, fresh spices and seasonings straight from trusted farms to your kitchen.
+                        At Masala Mist, we believe that truly great food begins with authentic ingredients, traditional flavours, and the passion to preserve them. Our journey was born from a simple vision to bring the richness of genuine Indian spices and seasonings from trusted sources straight to your kitchen.
                     </p>
                     <p className="text-gray-400 leading-relaxed mb-2">
-                        Every product we create goes through careful hand-selection, slow roasting, balanced blending, and quality checks to ensure you get the perfect taste in every pinch.
+                        Every spice is carefully selected, thoughtfully processed, and expertly blended to preserve its natural aroma, colour, and authentic flavour. From hand-selection and slow roasting to precise blending and quality checks, every step reflects our commitment to purity, freshness, and consistency.
                     </p>
 
                     <p className='text-gray-400 leading-relaxed mb-5'>
-                        We don't just make spices.
-                        We create experiences that bring families together, celebrate tradition, and deliver joy in every meal.
+                       At Masala Mist, we don’t simply create spices we preserve the true taste of tradition. Our flavours are made to bring families together, inspire memorable meals, and add a touch of authenticity to every dish.
                     </p>
+
+                    <p>
+                        <b>Masala Mist — Authentic Flavours. Timeless Tradition.</b>
+                    </p>
+
+                    <br />
 
                     <div className="grid grid-cols-2 gap-6 mb-10">
                         <div className="flex items-center gap-3">

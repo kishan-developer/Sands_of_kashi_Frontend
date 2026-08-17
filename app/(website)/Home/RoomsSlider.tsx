@@ -10,11 +10,14 @@ import {
   X,
 } from "lucide-react";
 import Link from "next/link";
+import BookingModal from "../Components/BookingModal";
+import { Room as BookingRoom } from "../Components/BookingForm";
 
 interface Room {
   id: number;
   title: string;
   image: string;
+  hoverImage?: string;
   size: string;
   capacity: string;
   price: string;
@@ -28,43 +31,59 @@ const rooms: Room[] = [
     id: 1,
     title: "Standard Room",
     image: "https://res.cloudinary.com/drmpv5vne/image/upload/v1783765559/DSC_0262_yfggis.jpg",
+    hoverImage:"https://res.cloudinary.com/drmpv5vne/image/upload/v1783765318/DSC_0252_ytc4df.jpg",
     bed: "1 King Bed",
     bathroom: "1 Bathroom",
     size: "130 sq.ft (12 sq.mt)",
     capacity: "Max 3 Guests",
     price: "₹3500.00",
-    url: "/booking/standard_room"
+    url: "/booking"
   },
   {
     id: 2,
     title: "Executive Room",
     image: "https://res.cloudinary.com/drmpv5vne/image/upload/v1783765559/DSC_0282_tde5ty.jpg",
+    hoverImage:"https://res.cloudinary.com/drmpv5vne/image/upload/v1783764968/DSC_0273_d7yn2u.jpg",
     bed: "1 King Bed",
     bathroom: "1 Bathroom",
     size: "200 sq.ft (19 sq.mt)",
     capacity: "Max 3 Guests",
     price: "₹4500.00",
-    url: "/booking/executive_room"
+    url: "/booking"
   },
   {
     id: 3,
     title: "Royal Suite Room",
     image: "https://res.cloudinary.com/drmpv5vne/image/upload/v1783765570/DSC_0222_kzr40q.jpg",
+    hoverImage:"https://res.cloudinary.com/drmpv5vne/image/upload/v1783764963/DSC_0227_mgde7h.jpg",
     bed: "1 King Bed",
     bathroom: "1 Bathroom",
     size: "282 sq.ft (26 sq.mt)",
     capacity: "Max 3 Guests",
     price: "₹5500.00",
-    url: "/booking/royal_suite_room"
+    url: "/booking"
   },
 ];
+
+const bookingRooms: BookingRoom[] = rooms.map((room) => ({
+  _id: String(room.id),
+  title: room.title,
+  description: "",
+  images: [room.image],
+  amenities: [],
+  features: [],
+  maxGuests: Number(room.capacity.match(/\d+/)?.[0] || 3),
+  price: Number(room.price.replace(/[^\d.]/g, "")),
+  size: room.size,
+  roomType: room.title,
+}));
 
 export default function RoomsGridSection() {
   const [modalRoom, setModalRoom] = useState<Room | null>(null);
   const [bookingRoom, setBookingRoom] = useState<Room | null>(null);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white"> 
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Section Header */}
@@ -107,8 +126,15 @@ export default function RoomsGridSection() {
                 <img
                   src={room.image}
                   alt={room.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out group-hover:opacity-0"
                 />
+                {room.hoverImage && (
+                  <img
+                    src={room.hoverImage}
+                    alt={`${room.title} - alternate`}
+                    className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
+                  />
+                )}
               </div>
 
               <div className="p-4 bg-white">
@@ -138,28 +164,20 @@ export default function RoomsGridSection() {
 
                 {/* Buttons */}
                 <div className="flex flex-wrap gap-3">
-                  <button
-                    onClick={() => setModalRoom(room)}
+                  <Link
+                    href={room.url as Route}
+                    target="_blank"
                     className="px-4 py-2 border border-[#8c735a] text-[#8c735a] rounded-md hover:bg-[#8c735a] hover:text-white transition"
                   >
                     View Details
-                  </button>
-
-                  <Link
-                    // href={`${room.url}`}
-                    href={room.url as Route}
-                    target="_blank"
-                    className="px-4 py-2 border border-gray-400 text-gray-700 rounded-md hover:bg-gray-200 transition"
-                  >
-                    Read More
                   </Link>
 
-                  {/* <button
+                  <button
                     onClick={() => setBookingRoom(room)}
-                    className="px-2 py-2 bg-[#8c735a] text-white rounded-md hover:bg-[#705c49] transition"
+                    className="px-4 py-2 bg-[#8c735a] text-white rounded-md hover:bg-[#705c49] transition"
                   >
-                    Book Now
-                  </button> */}
+                    Book Your Stay
+                  </button>
                 </div>
               </div>
             </div>
@@ -198,41 +216,11 @@ export default function RoomsGridSection() {
       )}
 
       {/* Booking Modal */}
-      {bookingRoom && (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
-          <div className="bg-white max-w-lg w-full p-6 rounded-lg relative">
-            <button onClick={() => setBookingRoom(null)} className="absolute top-3 right-3">
-              <X className="w-6 h-6" />
-            </button>
-
-            <h1 className="text-2xl font-serif mb-4">Book {bookingRoom.title}</h1>
-
-            <p className="text-gray-700 mb-4">
-              Price: <strong>{bookingRoom.price}</strong>
-            </p>
-
-            <div className="space-y-4">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full border p-2 rounded"
-              />
-              <input
-                type="text"
-                placeholder="Phone Number"
-                className="w-full border p-2 rounded"
-              />
-              <input
-                type="date"
-                className="w-full border p-2 rounded"
-              />
-              <button className="w-full py-2 bg-[#8c735a] text-white rounded hover:bg-[#705c49]">
-                Confirm Booking
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <BookingModal
+        isOpen={!!bookingRoom}
+        onClose={() => setBookingRoom(null)}
+        placeName={bookingRoom?.title || ""}
+      />
     </section>
   );
 }

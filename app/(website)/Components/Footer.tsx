@@ -35,7 +35,7 @@ export default function Footer() {
               />
               <button className="bg-[#b48f6a] hover:bg-[#8c735a] text-white px-2 md:px-6 py-3 rounded-md transition-colors text-sm font-medium">
                 Subscribe
-              </button>
+              </button> 
             </div>
           </div>
         </div>

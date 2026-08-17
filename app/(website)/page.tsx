@@ -8,6 +8,7 @@ import SpecialOffers from './Home/SpecialOffers';
 import InstagramGallery from './Home/InstagramGallery';
 import { Gallery } from './Home/Gallery'
 import DistanceSection from './Home/DistanceSection';
+import DiningExperience from './Home/DiningExperience';
 
 export default function page() {
   return (
@@ -15,23 +16,27 @@ export default function page() {
 
       <Hero />
 
-      <RoomsSlider />
-
       <AboutSection />
 
-      <HotelFacilities />
+      <RoomsSlider />
+
+      <DiningExperience />
 
       <Gallery />
 
       <SpecialOffers />
 
-      <VideoHeroSection />
+      {/* <VideoHeroSection /> */}
 
-      <DistanceSection/>
+      <DistanceSection />
+
+      <HotelFacilities />
+
+      <InstagramGallery />
 
       <TestimonialSection />
 
-      <InstagramGallery />
+
 
     </div>
   )

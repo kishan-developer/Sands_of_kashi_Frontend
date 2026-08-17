@@ -5,9 +5,11 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BookingBar from "./BookingBar";
+import BookingModal from "../Components/BookingModal";
 import { MoveLeft, MoveRight } from "lucide-react";
 
 const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const images = [
     // "./photo/DSC_0360.JPG",
     "https://res.cloudinary.com/drmpv5vne/image/upload/v1783764978/DSC_0360_gdf7ab.jpg",
@@ -15,6 +17,10 @@ const Hero = () => {
     "https://res.cloudinary.com/drmpv5vne/image/upload/v1783764974/DSC_0288_ph0phq.jpg"
   ];
   const [current, setCurrent] = useState(0);
+
+  const handleBookNow = () => {
+    setIsModalOpen(true);
+  };
 
   const nextSlide = () =>
     setCurrent((prev) => (prev + 1) % images.length);
@@ -87,12 +93,12 @@ const Hero = () => {
 
         {/* CTA Button */}
         <div className="hidden md:flex items-center justify-center gap-5 md:gap-20">
-          <Link
-            href="/booking"
+          <button
+            onClick={handleBookNow}
             className="bg-[#b5946a] hover:bg-[#a3835a] transition-colors px-8 py-4 rounded-sm text-sm uppercase tracking-widest font-medium"
           >
             Book Your Stay
-          </Link>
+          </button>
 
           <Link
             href="/contact"
@@ -105,6 +111,12 @@ const Hero = () => {
 
       {/* Booking Bar */}
       {/* <BookingBar /> */}
+      
+      {/* Booking Modal */}
+      <BookingModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   );
 };

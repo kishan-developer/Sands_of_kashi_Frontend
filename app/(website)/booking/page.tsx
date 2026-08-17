@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Users, Bed, Star, Check, Calendar, MapPin, Wifi, Car, Coffee, ShowerHead, Plane, Tent, Refrigerator, Headphones, Laptop, Dumbbell, Waves, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
-import BookingForm from "../Components/BookingForm";
+import BookingModal from "../Components/BookingModal";
 
 interface Room {
   _id: string;
@@ -33,6 +33,7 @@ export default function BookingPage() {
   const [rooms, setRooms] = useState<Room[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedRoom, setSelectedRoom] = useState<string>("");
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const [imageIndexes, setImageIndexes] = useState<{ [key: string]: number }>({});
 
   useEffect(() => {
@@ -60,7 +61,7 @@ export default function BookingPage() {
 
   const handleRoomSelect = (roomTitle: string) => {
     setSelectedRoom(roomTitle);
-    document.getElementById("booking-form")?.scrollIntoView({ behavior: "smooth" });
+    setIsBookingModalOpen(true);
   };
 
   const nextImage = (roomId: string) => {
@@ -106,7 +107,7 @@ export default function BookingPage() {
             <Star className="text-[#c5a37f] fill-[#c5a37f]" size={24} />
             <Star className="text-[#c5a37f] fill-[#c5a37f]" size={24} />
           </div>
-          <h1 className="text-5xl md:text-6xl font-serif mb-4 text-center">Book Your Stay</h1>
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-serif mb-4 text-center">Book Your Stay</h1>
           <p className="text-xl text-gray-200 text-center max-w-2xl">
             Experience luxury and comfort at Sands of Kashi. Select your perfect room and create unforgettable memories.
           </p>
@@ -285,15 +286,26 @@ export default function BookingPage() {
 
           {/* Right Side - Booking Form */}
           <div className="lg:col-span-1">
-            <div id="booking-form" className="lg:sticky lg:top-24">
-              <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
-                <div className="mb-6 pb-4 border-b border-gray-100">
-                  <h3 className="text-2xl font-serif text-[#1a1a1a] mb-2">Complete Your Booking</h3>
-                  <p className="text-sm text-gray-500">
+            <div className="lg:sticky lg:top-24">
+              <div className="bg-white rounded-2xl shadow-xl p-4 border border-gray-100">
+                {/* <div className="mb-6 pb-4 border-b border-gray-100">
+                  <h3 className="text-2xl font-serif text-center text-[#1a1a1a] mb-2">Complete Your Booking</h3>
+                  <p className="text-sm text-center text-gray-500">
                     {selectedRoom ? `Selected: ${selectedRoom}` : "Select a room to begin"}
                   </p>
+                </div> */}
+                <div className="text-center py-8">
+                  <h3 className="text-2xl font-serif text-[#1a1a1a] mb-2">Book Your Stay..</h3>
+                  <p className="text-sm text-gray-500 mb-6">
+                    {selectedRoom ? `Selected: ${selectedRoom}` : "Select a room or book directly"}
+                  </p>
+                  <button
+                    onClick={() => setIsBookingModalOpen(true)}
+                    className="px-8 py-4 bg-[#1a1a1a] text-white rounded-xl font-semibold hover:bg-[#c5a37f] transition-all w-full"
+                  >
+                    {selectedRoom ? "Continue Booking" : "Book Now"}
+                  </button>
                 </div>
-                <BookingForm initialRoomType={selectedRoom} />
                 
                 {/* Trust Badges */}
                 <div className="mt-6 pt-6 border-t border-gray-100">
@@ -335,6 +347,13 @@ export default function BookingPage() {
           </div>
         </div>
       </div>
+
+
+      <BookingModal
+        isOpen={isBookingModalOpen}
+        onClose={() => setIsBookingModalOpen(false)}
+        placeName={selectedRoom}
+      />
     </div>
   );
 }

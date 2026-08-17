@@ -23,7 +23,7 @@ const Hero = () => {
                     Experience <span className="text-[#c5a059]">Authentic</span> Taste & Luxury Dining
                 </h1>
                 <p className="text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-medium leading-relaxed">
-                    Enjoy a dining experience where traditional cooking meets creativity. Every dish is made with care, skill, and the freshest ingredients.
+                    Experience the authentic flavors of our cuisine, where time-honored recipes meet creative culinary artistry. Every dish is thoughtfully prepared with traditional techniques, genuine flavors, and the freshest ingredients, bringing the true essence of our restaurant to every plate.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="#reserve" className="bg-[#c5a059] text-black px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white transition-all shadow-lg shadow-[#c5a059]/20">

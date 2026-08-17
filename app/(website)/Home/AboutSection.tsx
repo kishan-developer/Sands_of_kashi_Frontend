@@ -13,9 +13,9 @@ const AboutSection = () => {
           {/* Main Large Image */}
           <div className="absolute left-0 bottom-0 w-[85%] h-[90%] rounded-2xl overflow-hidden border-8 border-white shadow-xl z-10">
             <img
-              src="https://res.cloudinary.com/drmpv5vne/image/upload/v1783764978/DSC_0361_uqgmnq.jpg"
+              src="https://res.cloudinary.com/drmpv5vne/image/upload/v1783764977/DSC_0356_uqafdc.jpg"
               // Replace with your image
-              alt="Luxury Bedroom"
+              alt="Reseption_area"
 
               className="object-cover w-full h-full "
             />
@@ -25,8 +25,8 @@ const AboutSection = () => {
           <div className="absolute right-0 top-100 w-[40%] h-[40%] rounded-2xl overflow-hidden border-8 border-white shadow-2xl z-20">
             <img
               // Replace with your image
-              src="https://res.cloudinary.com/drmpv5vne/image/upload/v1783764978/DSC_0360_gdf7ab.jpg"
-              alt="Room Detail"
+              src="https://res.cloudinary.com/drmpv5vne/image/upload/v1783764978/hotel_front_m9mphh.jpg"
+              alt="hotel_front_look"
               className="object-cover h-full w-full"
             />
           </div>
@@ -62,12 +62,12 @@ const AboutSection = () => {
 
           <p className="text-gray-500 leading-relaxed text-sm md:text-base lg:max-w-xl">
 
-            A proud unit of Coral Group, Sands of Kashi Hotel & Resort offers the perfect blend of Varanasi's timeless heritage and modern hospitality. Designed for both business and leisure travelers, our hotel provides a comfortable and memorable stay with warm service and contemporary amenities.
+            A proud unit of Coral Group, Hotel Sands of Kashi offers the perfect blend of Varanasi's timeless heritage and modern hospitality. Designed for both business and leisure travelers, our hotel provides a comfortable and memorable stay with warm service and contemporary amenities.
 
           </p>
 
           <p className="text-gray-500 leading-relaxed text-sm md:text-base lg:max-w-xl">
-            Experience thoughtfully designed accommodations, exceptional dining at our in-house restaurant, elegant event and banquet spaces, and personalized hospitality that reflects the spirit of Kashi. Whether you're visiting for business, celebrations, or a spiritual journey, Sands of Kashi ensures every moment is comfortable, convenient, and memorable.
+            Experience thoughtfully designed accommodations, exceptional dining at our in-house restaurant and personalized hospitality that reflects the spirit of Kashi. Whether you're visiting for business, celebrations, or a spiritual journey, Hotel Sands of Kashi ensures every moment is comfortable, convenient, and memorable.
           </p>
 
           <Link href="/about" className="bg-[#b5946a] hover:bg-[#a3835a] text-white px-10 py-4 rounded-md transition-all font-medium shadow-lg hover:shadow-xl active:scale-95">
