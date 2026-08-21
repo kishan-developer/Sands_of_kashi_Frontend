@@ -18,7 +18,7 @@ export default function Banner() {
             {/* Content */}
             <div className="absolute top-0 inset-0 flex flex-col items-center justify-center text-center px-4">
                 <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-serif leading-tight">
-                    Experience Varanasi's <br />
+                    Experience Varanasi&apos;s <br />
                     <span className="text-yellow-400 font-serif">
                         Finest Luxury Stay
                     </span>

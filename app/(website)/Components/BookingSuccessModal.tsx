@@ -42,7 +42,7 @@ export default function BookingSuccessModal({ isOpen, onClose }: BookingSuccessM
         {/* 12-hour Contact Promise */}
         <div className="bg-[#f8f7f5] rounded-xl p-4 mb-6">
           <p className="text-[#c5a37f] font-semibold mb-1">
-            ⏰ We'll Contact You Within 12 Hours
+            ⏰ We&apos;ll Contact You Within 12 Hours
           </p>
           <p className="text-gray-500 text-sm">
             Our team will review your request and get back to you via email or phone to confirm availability and payment details.

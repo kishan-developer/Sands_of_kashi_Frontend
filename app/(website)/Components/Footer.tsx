@@ -118,7 +118,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-10 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-6">
           <a href="https://www.linkedin.com/in/kishan-kumar-ray-372972234/" target="_blank" className="text-gray-400 text-md">
-            Copyright © 2026 Coral-Group Developed By "Kishan Kumar Ray"
+            Copyright © 2026 Coral-Group Developed By &quot;Kishan Kumar Ray&quot;
           </a>
 
           <div className="flex items-center gap-2 md:gap-8 text-md text-gray-500">

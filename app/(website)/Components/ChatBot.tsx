@@ -59,9 +59,7 @@ const ChatBot = () => {
     setIsLoading(true);
 
     try {
-      // Simulate API call for AI response
-      // In a real scenario, you'd fetch from "/api/chat"
-      const response = await fetch("/api/chat", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: originalInput }),

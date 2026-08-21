@@ -22,7 +22,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
         <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-serif leading-tight">
-          Experience Varanasi's <br />
+          Experience Varanasi&apos;s <br />
           <span className="text-yellow-400 font-serif">
             Finest Luxury Stay
           </span>

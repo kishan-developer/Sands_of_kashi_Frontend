@@ -62,12 +62,12 @@ const AboutSection = () => {
 
           <p className="text-gray-500 leading-relaxed text-sm md:text-base lg:max-w-xl">
 
-            A proud unit of Coral Group, Hotel Sands of Kashi offers the perfect blend of Varanasi's timeless heritage and modern hospitality. Designed for both business and leisure travelers, our hotel provides a comfortable and memorable stay with warm service and contemporary amenities.
+            A proud unit of Coral Group, Hotel Sands of Kashi offers the perfect blend of Varanasi&apos;s timeless heritage and modern hospitality. Designed for both business and leisure travelers, our hotel provides a comfortable and memorable stay with warm service and contemporary amenities.
 
           </p>
 
           <p className="text-gray-500 leading-relaxed text-sm md:text-base lg:max-w-xl">
-            Experience thoughtfully designed accommodations, exceptional dining at our in-house restaurant and personalized hospitality that reflects the spirit of Kashi. Whether you're visiting for business, celebrations, or a spiritual journey, Hotel Sands of Kashi ensures every moment is comfortable, convenient, and memorable.
+            Experience thoughtfully designed accommodations, exceptional dining at our in-house restaurant and personalized hospitality that reflects the spirit of Kashi. Whether you&apos;re visiting for business, celebrations, or a spiritual journey, Hotel Sands of Kashi ensures every moment is comfortable, convenient, and memorable.
           </p>
 
           <Link href="/about" className="bg-[#b5946a] hover:bg-[#a3835a] text-white px-10 py-4 rounded-md transition-all font-medium shadow-lg hover:shadow-xl active:scale-95">

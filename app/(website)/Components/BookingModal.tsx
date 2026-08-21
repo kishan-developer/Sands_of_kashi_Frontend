@@ -32,13 +32,25 @@ export default function BookingModal({ isOpen, onClose, placeName }: BookingModa
     setIsSubmitting(true);
     setSubmitMessage('');
 
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      roomType: formData.roomType,
+      checkIn: formData.checkIn,
+      checkOut: formData.checkOut,
+      guests: Number(formData.adults) + Number(formData.children),
+      rooms: Number(formData.numberOfRooms),
+      message: formData.message,
+    };
+
     try {
-      const response = await fetch('/api/book', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/bookings/public/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const data = await response.json();

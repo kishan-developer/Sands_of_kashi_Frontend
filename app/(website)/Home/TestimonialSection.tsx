@@ -135,7 +135,7 @@ export default function TestimonialSection() {
                 </div>
 
                 <blockquote className="text-xl md:text-2xl text-[#1a1a1a] font-serif leading-relaxed mb-10 italic">
-                  "{current.quote}"
+                  &quot;{current.quote}&quot;
                 </blockquote>
 
                 <div className="mt-auto">
