@@ -9,9 +9,7 @@ import {
   Phone,
   MessageSquare,
   User,
-  Bot,
-  ChevronRight,
-  HeadphonesIcon
+  Bot
 } from "lucide-react";
 
 interface Message {

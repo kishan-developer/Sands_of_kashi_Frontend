@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { Car, Wind, Coffee, Wifi, CreditCard, X, Ban, User, Languages, Utensils, Clock, Luggage, HeadphonesIcon, Shirt, ArrowUp, Dumbbell, Flower2, Dog, Bed } from "lucide-react";
+import { Car, Wifi, CreditCard, User, Languages, Utensils, Clock, Dog, Bed } from "lucide-react";
+import Image from "next/image";
 
 interface AmenityItem {
   name: string;
@@ -20,10 +21,8 @@ const facilities: FacilityCategory[] = [
     icon: <Wifi className="w-6 h-6 text-[#AB8A63]" />,
     items: [
       { name: "Parking", free: true },
-      // { name: "Air conditioning", free: true },
       { name: "Breakfast", free: true },
       { name: "Wi-Fi", free: true },
-      // { name: "Internet (Wi-Fi)", free: true },
     ],
   },
   {
@@ -47,14 +46,6 @@ const facilities: FacilityCategory[] = [
       { name: "Lift" },
     ],
   },
-  // {
-  //   title: "Pools",
-  //   icon: <X className="w-6 h-6 text-[#AB8A63]" />,
-  //   items: [
-  //     { name: "No pools" },
-  //     { name: "No hot tub" },
-  //   ],
-  // },
   {
     title: "Parking & transport",
     icon: <Car className="w-6 h-6 text-[#AB8A63]" />,
@@ -87,15 +78,6 @@ const facilities: FacilityCategory[] = [
       { name: "Breakfast", free: true },
     ],
   },
-  
-  // {
-  //   title: "Wellness",
-  //   icon: <Dumbbell className="w-6 h-6 text-[#AB8A63]" />,
-  //   items: [
-  //     { name: "No fitness centre" },
-  //     { name: "No spa" },
-  //   ],
-  // },
   {
     title: "Pets",
     icon: <Dog className="w-6 h-6 text-[#AB8A63]" />,
@@ -163,9 +145,10 @@ export default function HotelFacilities() {
           {/* Right Image Side */}
           <div className="relative h-[400px] md:h-[500px] lg:h-[600px] w-full">
             <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="https://res.cloudinary.com/drmpv5vne/image/upload/v1783764963/DSC_0221_ocnztf.jpg" // Replace with your actual image path
+              <Image
+                src="https://res.cloudinary.com/drmpv5vne/image/upload/v1783764963/DSC_0221_ocnztf.jpg"
                 alt="Modern Hotel Room"
+                fill
                 className="w-full h-full object-cover"
               />
             </div>

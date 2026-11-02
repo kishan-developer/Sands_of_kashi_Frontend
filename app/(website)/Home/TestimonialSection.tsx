@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import Image from "next/image";
 
 interface Testimonial {
   id: number;
@@ -112,9 +113,10 @@ export default function TestimonialSection() {
               <div className="relative aspect-square w-full max-w-[350px] mx-auto">
                 <div className="absolute inset-0 border-[1px] border-[#c5a37f]/20 rounded-full scale-110 animate-pulse"></div>
                 <div className="relative w-full h-full rounded-full overflow-hidden border-[12px] border-white shadow-2xl">
-                  <img
+                  <Image
                     src={current.image}
                     alt="Guest"
+                    fill
                     className="object-cover w-full h-full transition-transform duration-700 hover:scale-110"
                   />
                 </div>

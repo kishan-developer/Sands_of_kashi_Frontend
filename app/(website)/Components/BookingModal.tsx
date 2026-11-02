@@ -53,8 +53,6 @@ export default function BookingModal({ isOpen, onClose, placeName }: BookingModa
         body: JSON.stringify(payload),
       });
 
-      const data = await response.json();
-
       if (response.ok) {
         setSubmitMessage('Booking request sent successfully!');
         setFormData({
@@ -76,7 +74,7 @@ export default function BookingModal({ isOpen, onClose, placeName }: BookingModa
       } else {
         setSubmitMessage('Failed to send booking request. Please try again.');
       }
-    } catch (error) {
+    } catch {
       setSubmitMessage('An error occurred. Please try again.');
     } finally {
       setIsSubmitting(false);

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 import { Facebook, Linkedin, Twitter } from "lucide-react";
 
@@ -73,9 +74,10 @@ export default function MeetTheTeam() {
               
               {/* Profile Image Container */}
               <div className="relative w-full aspect-square overflow-hidden rounded-xl bg-gray-100 mb-6">
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
+                  fill
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105"
                 />
               </div>

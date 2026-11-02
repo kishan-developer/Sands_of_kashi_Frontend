@@ -1,10 +1,9 @@
 
 "use client";
 
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import BookingBar from "./BookingBar";
+import Image from "next/image";
 import BookingModal from "../Components/BookingModal";
 import { MoveLeft, MoveRight } from "lucide-react";
 
@@ -22,8 +21,8 @@ const Hero = () => {
     setIsModalOpen(true);
   };
 
-  const nextSlide = () =>
-    setCurrent((prev) => (prev + 1) % images.length);
+  const nextSlide = useCallback(() =>
+    setCurrent((prev) => (prev + 1) % images.length), [images.length]);
 
   const prevSlide = () =>
     setCurrent((prev) => (prev - 1 + images.length) % images.length);
@@ -31,7 +30,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(nextSlide, 4000); // Auto-slide every 4s
     return () => clearInterval(interval);
-  }, []);
+  }, [nextSlide]);
 
   return (
     <section className="relative h-[100vh] md:h-screen flex flex-col justify-center items-center text-white overflow-hidden">
@@ -39,10 +38,11 @@ const Hero = () => {
       {/* Background Slider */}
       <div className="absolute inset-0 z-0">
         {images.map((img, index) => (
-          <img
+          <Image
             key={index}
             src={img}
             alt="Hero background"
+            fill
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out
             ${index === current ? "opacity-100" : "opacity-0"}`}
           />

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Play } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -26,10 +27,12 @@ export default function VideoOverview() {
         {/* Video Thumbnail Container */}
         <div className="relative w-full aspect-video rounded-3xl overflow-hidden group shadow-2xl">
           {/* Background Image / Placeholder */}
-          <img
-            src="./room_1.jpg" // Replace with your image
+          <Image
+            src="/room_1.jpg"
             alt="Restaurant Overview"
-            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            fill
+            sizes="(max-width: 1280px) 100vw, 1280px"
+            className="object-cover transition-transform duration-1000 group-hover:scale-105"
           />
           
           {/* Dark Overlay */}

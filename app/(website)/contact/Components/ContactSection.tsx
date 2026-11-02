@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { toast } from "react-toastify";
-import { Mail, Phone, MapPin, Clock, Check } from "lucide-react";
+import { Mail, Phone, MapPin, Check } from "lucide-react";
 
 interface ContactInfo {
   icon: React.ReactNode;

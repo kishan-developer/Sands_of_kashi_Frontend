@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Users, Bed } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import type { Route } from "next";
 import BookingForm from "../../Components/BookingForm";
 
@@ -48,11 +49,13 @@ export default function RoomListing() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {rooms.map((room) => (
               <div key={room._id} className="group bg-white rounded-xl border shadow-sm hover:shadow-md overflow-hidden">
-                <div className="h-64 overflow-hidden">
-                  <img
-                    src={room.images[0]}
+                <div className="h-64 relative overflow-hidden">
+                  <Image
+                    src={room.images[0] || "/room_1.jpg"}
                     alt={room.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
 

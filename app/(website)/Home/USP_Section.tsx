@@ -1,4 +1,4 @@
-import { HelpCircleIcon, LocationEdit, Phone } from 'lucide-react'
+import { LocationEdit, Phone } from 'lucide-react'
 import React from 'react'
 
 export default function USP_Section() {

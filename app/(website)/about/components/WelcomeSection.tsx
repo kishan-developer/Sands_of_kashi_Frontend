@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 export default function WelcomeSection() {
     return (
@@ -12,21 +13,20 @@ export default function WelcomeSection() {
         <div className="relative h-[500px] md:h-[600px]">
           {/* Main Large Image */}
           <div className="absolute left-0 bottom-0 w-[85%] h-[90%] rounded-2xl overflow-hidden border-8 border-white shadow-xl z-10">
-            <img
+            <Image
               src="https://res.cloudinary.com/drmpv5vne/image/upload/v1783764978/DSC_0361_uqgmnq.jpg"
-              // Replace with your image
               alt="Luxury Bedroom"
-
+              fill
               className="object-cover w-full h-full "
             />
           </div>
 
           {/* Top Overlapping Image */}
           <div className="absolute right-0 top-100 w-[40%] h-[40%] rounded-2xl overflow-hidden border-8 border-white shadow-2xl z-20">
-            <img
-              // Replace with your image
+            <Image
               src="https://res.cloudinary.com/drmpv5vne/image/upload/v1783764978/DSC_0360_gdf7ab.jpg"
               alt="Room Detail"
+              fill
               className="object-cover h-full w-full"
             />
           </div>

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { BlogPost, posts } from "../data";
 
@@ -51,9 +52,11 @@ export default function BlogView({
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
             <div className="lg:col-span-2 space-y-8">
-              <img
+              <Image
                 src={post.image}
                 alt={post.title}
+                width={800}
+                height={384}
                 className="w-full h-96 object-cover rounded-2xl"
               />
 
@@ -131,9 +134,11 @@ export default function BlogView({
                         href={`/blogs/${p.id}`}
                         className="group flex gap-4"
                       >
-                        <img
+                        <Image
                           src={p.image}
                           alt={p.title}
+                          width={80}
+                          height={80}
                           className="w-20 h-20 object-cover rounded-xl shrink-0"
                         />
                         <div>
@@ -189,9 +194,10 @@ export default function BlogView({
               >
                 <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500">
                   <div className="relative h-56 overflow-hidden">
-                    <img
+                    <Image
                       src={p.image}
                       alt={p.title}
+                      fill
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
                     <div className="absolute top-4 left-4 bg-[#c5a37f] text-white text-[10px] uppercase tracking-widest px-4 py-1 rounded-full font-bold">

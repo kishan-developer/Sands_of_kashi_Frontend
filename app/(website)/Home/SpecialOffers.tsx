@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { useState } from 'react';
+import Image from 'next/image';
 import BookingModal from '../Components/BookingModal';
 
 // 1. Define the Interface for an Offer
@@ -88,10 +88,10 @@ export default function SpecialOffers() {
             <div className="flex flex-col h-full bg-[#1a1a1a] rounded-xl overflow-hidden group">
               {/* Fixed h-[full] to h-full or a specific height for mobile */}
               <div className="relative h-[300px] md:h-[450px] lg:h-full overflow-hidden">
-                <img
+                <Image
                   src={largeOffer.image}
                   alt={largeOffer.title}
-
+                  fill
                   className="object-cover h-full w-full group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
@@ -125,10 +125,10 @@ export default function SpecialOffers() {
                 className="flex flex-col md:flex-row bg-[#1a1a1a] rounded-xl overflow-hidden group min-h-[300px]"
               >
                 <div className="relative w-full md:w-1/2 h-[250px] md:h-auto overflow-hidden">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
-
+                    fill
                     className="object-cover h-full group-hover:scale-105 transition-transform duration-700"
                     sizes="(max-width: 768px) 100vw, 25vw"
                   />

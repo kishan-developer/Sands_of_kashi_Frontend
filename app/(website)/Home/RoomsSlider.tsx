@@ -10,8 +10,8 @@ import {
   X,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import BookingModal from "../Components/BookingModal";
-import { Room as BookingRoom } from "../Components/BookingForm";
 
 interface Room {
   id: number;
@@ -65,19 +65,6 @@ const rooms: Room[] = [
   },
 ];
 
-const bookingRooms: BookingRoom[] = rooms.map((room) => ({
-  _id: String(room.id),
-  title: room.title,
-  description: "",
-  images: [room.image],
-  amenities: [],
-  features: [],
-  maxGuests: Number(room.capacity.match(/\d+/)?.[0] || 3),
-  price: Number(room.price.replace(/[^\d.]/g, "")),
-  size: room.size,
-  roomType: room.title,
-}));
-
 export default function RoomsGridSection() {
   const [modalRoom, setModalRoom] = useState<Room | null>(null);
   const [bookingRoom, setBookingRoom] = useState<Room | null>(null);
@@ -123,15 +110,19 @@ export default function RoomsGridSection() {
               className="rounded-lg overflow-hidden shadow-md group"
             >
               <div className="relative h-[360px] overflow-hidden">
-                <img
+                <Image
                   src={room.image}
                   alt={room.title}
+                  width={400}
+                  height={360}
                   className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out group-hover:opacity-0"
                 />
                 {room.hoverImage && (
-                  <img
+                  <Image
                     src={room.hoverImage}
                     alt={`${room.title} - alternate`}
+                    width={400}
+                    height={360}
                     className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"
                   />
                 )}
@@ -193,7 +184,7 @@ export default function RoomsGridSection() {
               <X className="w-6 h-6 text-[#8c735a]" />
             </button>
 
-            <img src={modalRoom.image} className="w-full mt-5 h-60 object-cover rounded-md mb-4" />
+            <Image src={modalRoom.image} alt={modalRoom.title} width={400} height={240} className="w-full mt-5 h-60 object-cover rounded-md mb-4" />
             <h1 className="text-2xl font-serif mb-2">{modalRoom.title}</h1>
 
             <div className="space-y-2 text-gray-700">

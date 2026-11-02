@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { posts } from "../data";
 
@@ -18,9 +19,10 @@ export default function BlogSection() {
             >
               <article className="flex flex-col bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500">
                 <div className="relative h-64 overflow-hidden">
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
+                    fill
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute top-4 left-4 bg-[#c5a37f] text-white text-[10px] uppercase tracking-widest px-4 py-1 rounded-full font-bold">

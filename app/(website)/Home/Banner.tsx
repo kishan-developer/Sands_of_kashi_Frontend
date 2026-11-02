@@ -1,15 +1,17 @@
 
 import React from 'react'
+import Image from 'next/image'
 
 export default function Banner() {
     return (
-        <div className='h-screen w-full overflow-hidden '>
+        <div className='h-screen w-full overflow-hidden relative'>
             {/* Sands Of Kashi */}
-            <img
-                src="./room_1.jpg" // Replace with your image path
+            <Image
+                src="/room_1.jpg"
                 alt="Luxury Hotel"
                 className="object-cover w-full h-full "
-                
+                fill
+                priority
             />
             
             {/* Dark overlay */}

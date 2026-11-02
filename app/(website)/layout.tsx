@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Raleway } from "next/font/google";
 import Header from "./Components/Header";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // import "./globals.css";

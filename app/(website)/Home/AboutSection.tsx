@@ -1,7 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import BookingBar from './BookingBar';
+import Image from 'next/image';
 
 const AboutSection = () => {
   return (
@@ -12,21 +11,22 @@ const AboutSection = () => {
         <div className="relative h-[500px] md:h-[600px]">
           {/* Main Large Image */}
           <div className="absolute left-0 bottom-0 w-[85%] h-[90%] rounded-2xl overflow-hidden border-8 border-white shadow-xl z-10">
-            <img
+            <Image
               src="https://res.cloudinary.com/drmpv5vne/image/upload/v1783764977/DSC_0356_uqafdc.jpg"
-              // Replace with your image
               alt="Reseption_area"
-
+              width={800}
+              height={600}
               className="object-cover w-full h-full "
             />
           </div>
 
           {/* Top Overlapping Image */}
           <div className="absolute right-0 top-100 w-[40%] h-[40%] rounded-2xl overflow-hidden border-8 border-white shadow-2xl z-20">
-            <img
-              // Replace with your image
+            <Image
               src="https://res.cloudinary.com/drmpv5vne/image/upload/v1783764978/hotel_front_m9mphh.jpg"
               alt="hotel_front_look"
+              width={400}
+              height={300}
               className="object-cover h-full w-full"
             />
           </div>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, ArrowRight, Check, User, Mail, Phone, Lock, Eye, EyeOff } from "lucide-react";
 
 interface FormData {
@@ -19,7 +20,6 @@ export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [otpSent, setOtpSent] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [countdown, setCountdown] = useState(0);
@@ -136,7 +136,6 @@ export default function RegisterPage() {
       const data = await response.json();
 
       if (data.success) {
-        setOtpSent(true);
         setSuccess("OTP sent to your email");
         setCountdown(60); // Start 60-second countdown
         setStep(2);
@@ -144,7 +143,7 @@ export default function RegisterPage() {
         setError(data.message || "Failed to send OTP");
         setCanResendOtp(true); // Re-enable if failed
       }
-    } catch (err) {
+    } catch {
       setError("Failed to send OTP. Please try again.");
       setCanResendOtp(true); // Re-enable if failed
     } finally {
@@ -196,7 +195,7 @@ export default function RegisterPage() {
       } else {
         setError(data.message || "Registration failed");
       }
-    } catch (err) {
+    } catch {
       setError("Registration failed. Please try again.");
     } finally {
       setLoading(false);
@@ -224,7 +223,7 @@ export default function RegisterPage() {
         {/* Header */}
         <div className="text-center">
           <Link href="/" className="inline-block mb-6">
-            <img src="/logo.png" alt="Sands of Kashi" className="h-16 mx-auto" />
+            <Image src="/logo.png" alt="Sands of Kashi" width={180} height={64} className="h-16 w-auto mx-auto" priority />
           </Link>
           <h2 className="text-3xl font-bold text-white font-serif">Create Account</h2>
           <p className="mt-2 text-gray-400">Join Sands of Kashi for exclusive benefits</p>

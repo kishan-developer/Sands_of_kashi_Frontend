@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { Mail, Phone, MapPin, ArrowUp, Map, MapPinCheck } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, ArrowUp, MapPinCheck } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -52,7 +53,7 @@ export default function Footer() {
           <div className="space-y-6 ">
             <div className="flex items-center gap-2">
 
-              <img src="/logo.png" alt="logo" className="h-14 w-auto" />
+              <Image src="/logo.png" alt="logo" width={56} height={56} className="h-14 w-auto" />
               {/* <h3 className="text-2xl font-serif text-[#1a1a1a]">Sands Of Kashi</h3> */}
             </div>
 

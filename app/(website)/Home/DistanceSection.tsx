@@ -2,6 +2,7 @@
 
 import { MapPin, Map, Navigation, Train, Plane, MapPinned } from "lucide-react";
 import { useState } from 'react';
+import Image from 'next/image';
 import BookingModal from '../Components/BookingModal';
 
 const places = [
@@ -139,9 +140,10 @@ export default function DistanceSection() {
             >
               {/* Image Header */}
               <div className="w-full h-48 relative overflow-hidden bg-gray-100">
-                <img
+                <Image
                   src={place.image}
                   alt={place.name}
+                  fill
                   loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

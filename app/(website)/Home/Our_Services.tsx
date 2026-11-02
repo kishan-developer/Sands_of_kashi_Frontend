@@ -1,5 +1,6 @@
-import { Home, Hotel } from 'lucide-react'
+import { Hotel } from 'lucide-react'
 import React from 'react'
+import Image from 'next/image'
 
 export default function Our_Services() {
     return (
@@ -8,7 +9,7 @@ export default function Our_Services() {
             <div className="grid grid-cols-2 gap-5 w-[80%]">
 
                 <div className="left flex flex-col relative">
-                    <img src="/room_1.jpg" alt="room_image" className='rounded-lg' />
+                    <Image src="/room_1.jpg" alt="room_image" width={400} height={300} className='rounded-lg' />
                 </div>
 
                 <div className="Right  p-5 flex flex-col">

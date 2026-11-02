@@ -1,6 +1,6 @@
 "use client";
 
-import { Wifi, Wind, Coffee, Utensils, Clock, Shirt, Luggage, Check, Car, Snowflake, MapPin, HeadphonesIcon, Shield, ArrowUp, ChefHat, Bell } from "lucide-react";
+import { Wifi, Wind, Coffee, Utensils, Clock, Shirt, Luggage, Car, ChefHat, Bell, ArrowUp } from "lucide-react";
 import { useState } from 'react';
 import BookingModal from '../Components/BookingModal';
 

@@ -1,13 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ChevronDown, Menu, X, Bell } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [profileOpen, setProfileOpen] = useState(false);
-  const [notifyOpen, setNotifyOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -25,7 +24,7 @@ export default function Header() {
 
         {/* LOGO */}
         <Link href="/" className=" z-120 flex items-center">
-          <img src="/logo.png" alt="logo" className="h-16 md:h-20 lg:h-22 w-auto" />
+          <Image src="/logo.png" alt="logo" width={88} height={88} className="h-16 md:h-20 lg:h-22 w-auto" />
         </Link>
 
         {/* DESKTOP NAV - Hidden on mobile and tablet, visible on laptop/desktop */}

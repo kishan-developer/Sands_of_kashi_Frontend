@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Users, Bed, Star, Check, Calendar, MapPin, Wifi, Car, Coffee, ShowerHead, Plane, Tent, Refrigerator, Headphones, Laptop, Dumbbell, Waves, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import { Users, Star, Check, MapPin, Wifi, Car, ShowerHead, Plane, Tent, Refrigerator, Headphones, Laptop, Dumbbell, Waves, CheckCircle2, ChevronLeft, ChevronRight, Coffee } from "lucide-react";
+import Image from "next/image";
 import BookingModal from "../Components/BookingModal";
 
 interface Room {
@@ -27,6 +28,7 @@ const amenityIcons: { [key: string]: React.ReactNode } = {
   "Work Desk": <Laptop size={20} />,
   "Fitness Center": <Dumbbell size={20} />,
   "Swimming Pool": <Waves size={20} />,
+  "Coffee": <Coffee size={20} />,
 };
 
 export default function BookingPage() {
@@ -94,10 +96,12 @@ export default function BookingPage() {
       {/* Hero Section with Background */}
       <div className="relative h-[60vh] min-h-[400px] bg-[#1a1a1a] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 z-10"></div>
-        <img 
+        <Image 
           src="https://res.cloudinary.com/drmpv5vne/image/upload/v1783764978/DSC_0360_gdf7ab.jpg"
           alt="Hotel Background"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          priority
+          className="object-cover"
         />
         <div className="relative z-20 h-full flex flex-col items-center justify-center text-white px-6">
           <div className="flex items-center gap-3 mb-4">
@@ -162,10 +166,12 @@ export default function BookingPage() {
               >
                 {/* Image Gallery */}
                 <div className="relative h-80 md:h-96 overflow-hidden">
-                  <img
-                    src={room.images[imageIndexes[room._id] || 0] || room.images[0] || "/hotel/placeholder.jpg"}
+                  <Image
+                    src={room.images[imageIndexes[room._id] || 0] || room.images[0] || "/room_1.jpg"}
                     alt={room.title}
-                    className="w-full h-full object-cover transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 66vw"
+                    className="object-cover transition-transform duration-500"
                   />
                   
                   {/* Image Navigation */}
